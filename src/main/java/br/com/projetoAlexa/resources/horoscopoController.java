@@ -9,7 +9,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import br.com.projetoAlexa.services.DadosService;
-import br.com.projetoAlexa.util.formatarTextoAlexa;
 
 @RestController
 @RequestMapping("/horoscopo")
@@ -23,9 +22,21 @@ public class horoscopoController {
 		
 		Random random = new Random();
 		try {
-			return ResponseEntity.ok().body(formatarTextoAlexa.getTextoAlexa(dados.dadosBiscoitoDaSorte(random.nextInt(250))));
+			return ResponseEntity.ok().body(
+					"está e sua sorte de hoje! " 
+					+ dados.dadosBiscoitoDaSorte(random.nextInt(250))
+					+ " Números da sorte:" 
+					+ random.nextInt(100)
+					+ ", "
+					+ random.nextInt(100)
+					+", "
+					+ random.nextInt(100)
+					+", "
+					+ random.nextInt(100)
+					+", "
+					+ random.nextInt(100));
 		} catch (Exception e) {
-			return ResponseEntity.badRequest().body(formatarTextoAlexa.getTextoAlexa("Sistema temporariamente indisponível, tente mais tarde!"));
+			return ResponseEntity.badRequest().body("Sistema temporariamente indisponível, tente mais tarde!");
 		}
 	}
 

@@ -13,11 +13,13 @@ import br.com.projetoAlexa.services.DadosService;
 @Service
 public class dadosServiceImpl implements DadosService {
 
+	static final String urlBiscoito = "https://www.horoscopovirtual.com.br/biscoito-da-sorte/resultado/";
+	static final String urlHoroscopo = "https://www.horoscopovirtual.com.br/horoscopo/";
+
 	@Override
 	public String dadosBiscoitoDaSorte(int id) throws IOException {
-		Document doc = Jsoup.connect("https://www.horoscopovirtual.com.br/biscoito-da-sorte/resultado/" + id).get();
+		Document doc = Jsoup.connect(urlBiscoito + id).get();
 		String mensagem = null;
-		log(doc.title());
 		Elements newsHeadlines = doc.select("meta[name*=description]");
 		for (Element headline : newsHeadlines) {
 			mensagem = headline.attr("content");
@@ -26,8 +28,18 @@ public class dadosServiceImpl implements DadosService {
 
 	}
 
-	private static void log(String msg, String... vals) {
-		System.out.println(String.format(msg, vals));
+	@Override
+	public String signo(String signo) throws IOException {
+		Document doc = Jsoup.connect(urlHoroscopo + signo).get();
+
+		StringBuilder mensagemFinal = new StringBuilder();
+		Elements newsHeadlines = doc.select("section[class*=content]");//name*=description
+		for (Element headline : newsHeadlines) {
+			mensagemFinal.append(headline.getElementsByClass("title-sign").text());
+			mensagemFinal.append(": ");
+			mensagemFinal.append(headline.getElementsByClass("text-pred").text());
+		}
+		return mensagemFinal.toString();
 	}
 
 }

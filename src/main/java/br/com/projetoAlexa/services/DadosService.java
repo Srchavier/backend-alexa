@@ -6,4 +6,6 @@ public interface DadosService {
 	
 	String dadosBiscoitoDaSorte(int i) throws IOException;
 
+	String signo(String signo) throws IOException;
+
 }

@@ -23,9 +23,9 @@ public class horoscopoController {
 		Random random = new Random();
 		try {
 			return ResponseEntity.ok().body(
-					"está e sua sorte de hoje! " 
+					"Está é a sua sorte de hoje! " 
 					+ dados.dadosBiscoitoDaSorte(random.nextInt(250))
-					+ " Números da sorte:" 
+					+ " Números da sorte: " 
 					+ random.nextInt(100)
 					+ ", "
 					+ random.nextInt(100)

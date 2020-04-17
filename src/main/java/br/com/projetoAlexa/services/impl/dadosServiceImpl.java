@@ -42,13 +42,15 @@ public class dadosServiceImpl implements DadosService {
 	}
 
 	@Override
-	public String signo(String signo) throws IOException {
-		Document doc = Jsoup.connect(urlHoroscopo + signo).get();
+	public String signo(String signo, Boolean isAmanha) throws IOException {
+		
+		String url = urlHoroscopo + signo + (isAmanha ? "/amanha" : "") ;
+		Document doc = Jsoup.connect(url).get();
 
 		StringBuilder mensagemFinal = new StringBuilder();
 		Elements newsHeadlines = doc.select("section[class*=content]");//name*=description
 		for (Element headline : newsHeadlines) {
-			mensagemFinal.append("A previsão para o seu signo é: ");
+			mensagemFinal.append("A previsão  para o seu signo é: ");
 			mensagemFinal.append(headline.getElementsByClass("text-pred").text());
 		}
 		return mensagemFinal.toString();

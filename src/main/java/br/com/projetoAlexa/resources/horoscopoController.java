@@ -28,10 +28,10 @@ public class horoscopoController {
 		}
 	}
 	
-	@GetMapping("/signo/{signo}")
-	public ResponseEntity<?> signo(@PathVariable String signo)  {
+	@GetMapping("/signo/{signo}/{isAmanha}")
+	public ResponseEntity<?> signo(@PathVariable("signo") String signo, @PathVariable("isAmanha") Boolean isAmanha)  {
 		try {
-			return ResponseEntity.ok().body(dados.signo(signo));
+			return ResponseEntity.ok().body(dados.signo(signo, isAmanha));
 		} catch (Exception e) {
 			return ResponseEntity.badRequest().body("Sistema temporariamente indisponível, tente mais tarde!");
 		}

@@ -4,7 +4,7 @@ import java.io.IOException;
 
 public interface DadosService {
 	
-	String dadosBiscoitoDaSorte(int i) throws IOException;
+	String dadosBiscoitoDaSorte() throws IOException;
 
 	String signo(String signo) throws IOException;
 

@@ -1,7 +1,5 @@
 package br.com.projetoAlexa.resources;
 
-import java.util.Random;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -21,21 +19,10 @@ public class horoscopoController {
 	@GetMapping("/biscoito")
 	public ResponseEntity<?> sorte()  {
 		
-		Random random = new Random();
+		
 		try {
-			return ResponseEntity.ok().body(
-					"Está é a sua sorte de hoje! " 
-					+ dados.dadosBiscoitoDaSorte(random.nextInt(250))
-					+ " Números da sorte: " 
-					+ random.nextInt(100)
-					+ ", "
-					+ random.nextInt(100)
-					+", "
-					+ random.nextInt(100)
-					+", "
-					+ random.nextInt(100)
-					+", "
-					+ random.nextInt(100));
+			return ResponseEntity.ok().body(dados.dadosBiscoitoDaSorte());
+					
 		} catch (Exception e) {
 			return ResponseEntity.badRequest().body("Sistema temporariamente indisponível, tente mais tarde!");
 		}

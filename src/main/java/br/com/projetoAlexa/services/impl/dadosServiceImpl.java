@@ -50,7 +50,9 @@ public class dadosServiceImpl implements DadosService {
 		StringBuilder mensagemFinal = new StringBuilder();
 		Elements newsHeadlines = doc.select("section[class*=content]");//name*=description
 		for (Element headline : newsHeadlines) {
-			mensagemFinal.append("A previsão  para o seu signo é: ");
+			mensagemFinal.append("A previsão de ");
+			mensagemFinal.append(isAmanha ? "Amanhã " : "Hoje ");
+			mensagemFinal.append("para o seu signo é:");
 			mensagemFinal.append(headline.getElementsByClass("text-pred").text());
 		}
 		return mensagemFinal.toString();

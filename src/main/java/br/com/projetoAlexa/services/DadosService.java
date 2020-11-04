@@ -12,5 +12,7 @@ public interface DadosService {
 
 	String mapaAstral(MapaAstralDTOData mapa) throws IOException, Exception;
 
+	String simpatia(String tema, String simpatia) throws IOException;
+
 
 }

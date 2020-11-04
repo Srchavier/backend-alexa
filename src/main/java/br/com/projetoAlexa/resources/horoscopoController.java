@@ -38,6 +38,15 @@ public class horoscopoController {
 			return ResponseEntity.badRequest().body("Sistema temporariamente indisponível, tente mais tarde!");
 		}
 	}
+	
+	@GetMapping("/simpatia/{tema}/{simpatia}")
+	public ResponseEntity<?> simpatia(@PathVariable("tema") String tema, @PathVariable("simpatia") String simpatia) {
+		try {
+			return ResponseEntity.ok().body(dados.simpatia(tema, simpatia));
+		} catch (Exception e) {
+			return ResponseEntity.badRequest().body("Sistema temporariamente indisponível, tente mais tarde!");
+		}
+	}
 
 	@PostMapping("/mapa-astral")
 	public ResponseEntity<?> signo(@RequestBody MapaAstralDTOData mapa) {

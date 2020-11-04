@@ -18,6 +18,7 @@ public class dadosServiceImpl implements DadosService {
 
 	static final String urlBiscoito = "https://www.horoscopovirtual.com.br/biscoito-da-sorte/resultado/";
 	static final String urlHoroscopo = "https://www.horoscopovirtual.com.br/horoscopo/";
+	static final String urlHoroscopoVirtual = "https://www.horoscopovirtual.com.br/";
 	static final String urlDistance = "https://www.adistanciaentre.com/br/%s-latitude-longitude-%s-latitude-%s-longitude/LatLongHistoria/700226.aspx";
 	static final String urlMapaAstral = "https://astralmapa.com.br/mapa-astral";
 	static final Random random = new Random();
@@ -97,6 +98,16 @@ public class dadosServiceImpl implements DadosService {
 				.append(posicaoDosAstrosMensagem).append(distribuicaoDosElementos);
 
 		return mensagemFinal.toString();
+	}
+
+	@Override
+	public String simpatia(String tema, String simpatia) throws IOException {
+		Document doc = Jsoup.connect(urlHoroscopoVirtual + tema + "/"+ simpatia ).get();
+		Elements newsHeadlines = doc.getElementsByClass("result");
+		String title = newsHeadlines.select("h2").text();
+		String mensagem = newsHeadlines.select("p").text();
+
+		return title + ": " + mensagem;
 	}
 
 }

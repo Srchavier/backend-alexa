@@ -34,7 +34,7 @@ public class horoscopoController {
 	@ApiResponses(value = {
 			@ApiResponse(responseCode = "200", description = "Successful operation", content = {
 					@Content(mediaType = "application/json", schema = @Schema(implementation = String.class)) }),
-			@ApiResponse(responseCode = "400", description = "Not found", content = {
+			@ApiResponse(responseCode = "400", description = "Bad request", content = {
 					@Content(mediaType = "application/json", schema = @Schema(implementation = ErrorDTO.class)) }),
 			@ApiResponse(responseCode = "404", description = "Not found", content = {
 					@Content(mediaType = "application/json", schema = @Schema(implementation = ErrorDTO.class)) }),
@@ -57,7 +57,7 @@ public class horoscopoController {
 	@ApiResponses(value = {
 			@ApiResponse(responseCode = "200", description = "Successful operation", content = {
 					@Content(mediaType = "application/json", schema = @Schema(implementation = String.class)) }),
-			@ApiResponse(responseCode = "400", description = "Not found", content = {
+			@ApiResponse(responseCode = "400", description = "Bad request", content = {
 					@Content(mediaType = "application/json", schema = @Schema(implementation = ErrorDTO.class)) }),
 			@ApiResponse(responseCode = "404", description = "Not found", content = {
 					@Content(mediaType = "application/json", schema = @Schema(implementation = ErrorDTO.class)) }),
@@ -76,11 +76,12 @@ public class horoscopoController {
 		}
 	}
 
+
 	@Operation(summary = "Buscar por uma simpatia.", description = "Buscar por uma simpatia do tipo saúde, nergócios, trabalho, amor.")
 	@ApiResponses(value = {
 			@ApiResponse(responseCode = "200", description = "Successful operation", content = {
 					@Content(mediaType = "application/json", schema = @Schema(implementation = String.class)) }),
-			@ApiResponse(responseCode = "400", description = "Not found", content = {
+			@ApiResponse(responseCode = "400", description = "Bad request", content = {
 					@Content(mediaType = "application/json", schema = @Schema(implementation = ErrorDTO.class)) }),
 			@ApiResponse(responseCode = "404", description = "Not found", content = {
 					@Content(mediaType = "application/json", schema = @Schema(implementation = ErrorDTO.class)) }),
@@ -99,11 +100,12 @@ public class horoscopoController {
 		}
 	}
 
+	
 	@Operation(summary = "Criar um mapa astral.", description = "Criar um mapa astral personalizado de acordo com as informações passadas.")
 	@ApiResponses(value = {
 			@ApiResponse(responseCode = "200", description = "Successful operation", content = {
 					@Content(mediaType = "application/json", schema = @Schema(implementation = String.class)) }),
-			@ApiResponse(responseCode = "400", description = "Not found", content = {
+			@ApiResponse(responseCode = "400", description = "Bad request", content = {
 					@Content(mediaType = "application/json", schema = @Schema(implementation = ErrorDTO.class)) }),
 			@ApiResponse(responseCode = "404", description = "Not found", content = {
 					@Content(mediaType = "application/json", schema = @Schema(implementation = ErrorDTO.class)) }),

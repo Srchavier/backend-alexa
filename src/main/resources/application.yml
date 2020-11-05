@@ -35,5 +35,19 @@ springdoc:
   group-configs:
   - group: horoscopoDiario
     paths-to-match: /horoscopo/**
-  - group: horoscopo
-    packages-to-scan: br.com.projetoAlexa.resources
+    
+management:
+  health:
+    diskspace:
+      enabled: false
+  endpoint:
+    health:
+      show-details: always
+  endpoints:
+    web:
+      exposure:
+        include: '*'
+
+info:
+  app:
+    name: projeto_alexa

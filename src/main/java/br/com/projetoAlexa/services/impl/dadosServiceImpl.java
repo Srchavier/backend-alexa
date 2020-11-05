@@ -8,6 +8,7 @@ import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
+import org.springframework.cache.annotation.Cacheable;
 import org.springframework.stereotype.Service;
 
 import br.com.projetoAlexa.dto.MapaAstralDTOData;
@@ -38,6 +39,7 @@ public class dadosServiceImpl implements DadosService {
 	}
 
 	@Override
+	@Cacheable("signo")
 	public String signo(String signo, Boolean isAmanha) throws IOException {
 
 		String url = urlHoroscopo + signo + (isAmanha ? "/amanha" : "");
@@ -55,6 +57,7 @@ public class dadosServiceImpl implements DadosService {
 	}
 
 	@Override
+	@Cacheable("mapa")
 	public String mapaAstral(MapaAstralDTOData mapa) throws Exception {
 		String url = String.format(urlDistance, mapa.getCity(), mapa.getCity(), mapa.getCity());
 
@@ -101,6 +104,7 @@ public class dadosServiceImpl implements DadosService {
 	}
 
 	@Override
+	@Cacheable("simpatia")
 	public String simpatia(String tema, String simpatia) throws IOException {
 		Document doc = Jsoup.connect(urlHoroscopoVirtual + tema + "/"+ simpatia ).get();
 		Elements newsHeadlines = doc.getElementsByClass("result");

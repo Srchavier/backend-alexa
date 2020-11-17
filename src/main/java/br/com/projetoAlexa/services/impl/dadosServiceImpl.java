@@ -76,19 +76,20 @@ public class dadosServiceImpl implements DadosService {
 
 		StringBuilder mensagemFinal = new StringBuilder("");
 
-		String acedente = docMapaAstral.getElementsByClass("hs_about_heading_wrapper").get(2).select("p").text()
+		String acedente = docMapaAstral.getElementsByClass("hs_about_heading_wrapper").get(3).select("p").text()
 				.replace(". Ler Mais", ".");
 
 		StringBuilder posicaoDosAstrosMensagem = new StringBuilder("Posições dos Astros são: ");
 		Elements posicaoDosAstros = docMapaAstral
-				.select("body > div.hs_sign_main_wrapper > div > div.hs_sign_right_wrapper.visible-xs > div");
+				.select("body > div:nth-child(7) > div > div.hs_sign_right_wrapper.visible-xs");
+		
 		String mensagemPosicaoDosAstros = posicaoDosAstros.get(0).select("div.hs_slider_tabs_icon_cont_wrapper > ul")
 				.stream().map(e -> e.text()).collect(Collectors.joining(",   ")).replaceAll("Ângulo", "no ângulo de");
 		
 		posicaoDosAstrosMensagem.append(mensagemPosicaoDosAstros).append(".");
 
 		StringBuilder distribuicaoDosElementos = new StringBuilder("A distribuição dos Elementos revela que ");
-		String distribuicaoDosElementostexto = docMapaAstral.select("body > div:nth-child(21) > div > div > div > div > p").text();
+		String distribuicaoDosElementostexto = docMapaAstral.select("body > div.hs_sign_main_wrapper > div > div > div > div > p").text();
  
 		String fogo = "fogo " + docMapaAstral.getElementById("element-fire").attr("value");
 		String terra = "terra " + docMapaAstral.getElementById("element-earth").attr("value");

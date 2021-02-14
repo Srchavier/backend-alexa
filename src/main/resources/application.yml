@@ -10,9 +10,9 @@ server:
 spring:
   resources:
     cache:
-      period: 10000
+      period: 1000
       cachecontrol:
-        max-age: 10000
+        max-age: 1000
     chain:
       html-application-cache: true
       enabled: true

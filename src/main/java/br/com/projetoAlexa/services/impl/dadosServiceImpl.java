@@ -62,7 +62,6 @@ public class dadosServiceImpl implements DadosService {
 	}
 
 	@Override
-	@Cacheable("mapa")
 	public String mapaAstral(MapaAstralDTOData mapa) throws Exception {
 
 		EstadoDto estado = (EstadoDto) Http3Service.BuscaServicoDeOutrasApi(String.format(urlDistance, mapa.getCity()),

@@ -67,7 +67,7 @@ public class horoscopoController {
 					@Content(mediaType = "application/json", schema = @Schema(implementation = ErrorDTO.class)) }) })
 	@GetMapping("/signo/{signo}/{isAmanha}")
 	public ResponseEntity<?> signo(
-			@Parameter(description = "Signo da pessoa.", required = true) @PathVariable("signo") String signo,
+			@Parameter(description = "Signo da pessoa.", required = true, example = "peixes") @PathVariable("signo") String signo,
 			@Parameter(description = "previsão de hoje ou amanhã", required = true) @PathVariable("isAmanha") Boolean isAmanha) {
 		try {
 			return ResponseEntity.ok().body(dados.signo(signo, isAmanha));
@@ -75,7 +75,6 @@ public class horoscopoController {
 			return ResponseEntity.badRequest().body("Sistema temporariamente indisponível, tente mais tarde!");
 		}
 	}
-
 
 	@Operation(summary = "Buscar por uma simpatia.", description = "Buscar por uma simpatia do tipo saúde, nergócios, trabalho, amor.")
 	@ApiResponses(value = {
@@ -91,8 +90,8 @@ public class horoscopoController {
 					@Content(mediaType = "application/json", schema = @Schema(implementation = ErrorDTO.class)) }) })
 	@GetMapping("/simpatia/{tema}/{simpatia}")
 	public ResponseEntity<?> simpatia(
-			@Parameter(description = "tema da simpatia.", required = true) @PathVariable("tema") String tema,
-			@Parameter(description = "a simpatia.", required = true) @PathVariable("simpatia") String simpatia) {
+			@Parameter(description = "tema da simpatia.", required = true, example = "simpatias-saude") @PathVariable("tema") String tema,
+			@Parameter(description = "a simpatia.", required = true, example = "para-evitar-doencas") @PathVariable("simpatia") String simpatia) {
 		try {
 			return ResponseEntity.ok().body(dados.simpatia(tema, simpatia));
 		} catch (Exception e) {
@@ -100,7 +99,6 @@ public class horoscopoController {
 		}
 	}
 
-	
 	@Operation(summary = "Criar um mapa astral.", description = "Criar um mapa astral personalizado de acordo com as informações passadas.")
 	@ApiResponses(value = {
 			@ApiResponse(responseCode = "200", description = "Successful operation", content = {

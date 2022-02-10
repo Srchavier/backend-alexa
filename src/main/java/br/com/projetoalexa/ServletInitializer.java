@@ -1,4 +1,4 @@
-package br.com.projetoAlexa;
+package br.com.projetoalexa;
 
 import org.springframework.boot.builder.SpringApplicationBuilder;
 import org.springframework.boot.web.servlet.support.SpringBootServletInitializer;

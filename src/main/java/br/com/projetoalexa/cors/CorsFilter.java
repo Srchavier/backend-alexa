@@ -1,4 +1,4 @@
-package br.com.projetoAlexa.cors;
+package br.com.projetoalexa.cors;
 
 import java.io.IOException;
 

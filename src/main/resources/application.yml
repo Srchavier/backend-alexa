@@ -8,18 +8,19 @@ server:
   http2:
     enabled: true
 spring:
-  resources:
-    cache:
-      period: 1000
-      cachecontrol:
-        max-age: 1000
-    chain:
-      html-application-cache: true
-      enabled: true
-      strategy:
-        content:
-          enabled: true
-          paths: /webjars/swagger-ui/**.*
+  web:
+    resources:
+      cache:
+        period: 1000
+        cachecontrol:
+          max-age: 1000
+      chain:
+        html-application-cache: true
+        enabled: true
+        strategy:
+          content:
+            enabled: true
+            paths: /webjars/swagger-ui/**.*
 springdoc:
   version: '@springdoc.version@'
   api-docs:

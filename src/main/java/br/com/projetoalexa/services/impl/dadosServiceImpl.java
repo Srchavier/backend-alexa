@@ -1,4 +1,4 @@
-package br.com.projetoAlexa.services.impl;
+package br.com.projetoalexa.services.impl;
 
 import java.io.IOException;
 import java.io.UnsupportedEncodingException;
@@ -14,10 +14,10 @@ import org.jsoup.select.Elements;
 import org.springframework.cache.annotation.Cacheable;
 import org.springframework.stereotype.Service;
 
-import br.com.projetoAlexa.dto.EstadoDto;
-import br.com.projetoAlexa.dto.MapaAstralDTOData;
-import br.com.projetoAlexa.services.DadosService;
-import br.com.projetoAlexa.util.Http3Service;
+import br.com.projetoalexa.dto.EstadoDto;
+import br.com.projetoalexa.dto.MapaAstralDTOData;
+import br.com.projetoalexa.services.DadosService;
+import br.com.projetoalexa.util.Http3Service;
 
 @Service
 public class dadosServiceImpl implements DadosService {

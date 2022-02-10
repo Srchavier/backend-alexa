@@ -1,4 +1,4 @@
-package br.com.projetoAlexa.util;
+package br.com.projetoalexa.util;
 
 import java.io.File;
 import java.io.IOException;

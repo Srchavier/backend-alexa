@@ -1,4 +1,4 @@
-package br.com.projetoAlexa;
+package br.com.projetoalexa;
 
 import org.springdoc.core.GroupedOpenApi;
 import org.springframework.beans.factory.annotation.Value;

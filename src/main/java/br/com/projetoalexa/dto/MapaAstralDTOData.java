@@ -1,4 +1,4 @@
-package br.com.projetoAlexa.dto;
+package br.com.projetoalexa.dto;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 

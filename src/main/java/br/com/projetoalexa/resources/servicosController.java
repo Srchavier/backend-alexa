@@ -1,4 +1,4 @@
-package br.com.projetoAlexa.resources;
+package br.com.projetoalexa.resources;
 
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.DeleteMapping;

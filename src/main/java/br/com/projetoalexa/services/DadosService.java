@@ -1,8 +1,8 @@
-package br.com.projetoAlexa.services;
+package br.com.projetoalexa.services;
 
 import java.io.IOException;
 
-import br.com.projetoAlexa.dto.MapaAstralDTOData;
+import br.com.projetoalexa.dto.MapaAstralDTOData;
 
 public interface DadosService {
 	

@@ -1,4 +1,4 @@
-package br.com.projetoAlexa.resources;
+package br.com.projetoalexa.resources;
 
 import javax.validation.Valid;
 
@@ -11,9 +11,9 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import br.com.projetoAlexa.dto.ErrorDTO;
-import br.com.projetoAlexa.dto.MapaAstralDTOData;
-import br.com.projetoAlexa.services.DadosService;
+import br.com.projetoalexa.dto.ErrorDTO;
+import br.com.projetoalexa.dto.MapaAstralDTOData;
+import br.com.projetoalexa.services.DadosService;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.Parameter;
 import io.swagger.v3.oas.annotations.media.Content;
@@ -68,7 +68,7 @@ public class horoscopoController {
 	@GetMapping("/signo/{signo}/{isAmanha}")
 	public ResponseEntity<?> signo(
 			@Parameter(description = "Signo da pessoa.", required = true, example = "peixes") @PathVariable("signo") String signo,
-			@Parameter(description = "previsão de hoje ou amanhã", required = true) @PathVariable("isAmanha") Boolean isAmanha) {
+			@Parameter(description = "previsão de hoje ou amanhã") @PathVariable("isAmanha") Boolean isAmanha) {
 		try {
 			return ResponseEntity.ok().body(dados.signo(signo, isAmanha));
 		} catch (Exception e) {

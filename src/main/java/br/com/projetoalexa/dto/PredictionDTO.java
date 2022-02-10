@@ -1,4 +1,4 @@
-package br.com.projetoAlexa.dto;
+package br.com.projetoalexa.dto;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;

@@ -11,7 +11,7 @@
 	</parent>
 	<groupId>br.com.projetoAlexa</groupId>
 	<artifactId>projeto_alexa</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
+	<version>0.0.32-SNAPSHOT</version>
 	<packaging>jar</packaging>
 	<name>projeto_alexa</name>
 	<description>Demo project for Spring Boot</description>

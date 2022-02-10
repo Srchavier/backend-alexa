@@ -52,3 +52,6 @@ management:
 info:
   app:
     name: projeto_alexa
+
+application-description: @project.description@
+application-version: @project.version@

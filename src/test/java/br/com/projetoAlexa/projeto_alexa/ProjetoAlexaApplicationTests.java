@@ -1,4 +1,4 @@
-package br.com.projetoAlexa.projeto_alexa;
+package br.com.projetoalexa.projeto_alexa;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
